@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Form Example</title>
+  </head>
+  <body>
+    <h1>HTML Form</h1>
+    <form action="#" method="post" enctype="multipart/form-data">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <br /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <br /><br />
+
+      <label for="age">Age:</label>
+      <!-- set the minimum and maximum values for the age input field -->
+      <input type="number" id="age" name="age" />
+      <br /><br />
+
+      <label for="fileUpload">Upload a file:</label>
+      <!-- prepare an input field for file uploads -->
+      <input type="file" id="fileUpload" name="fileUpload" />
+      <br /><br />
+
+      <label for="message">Message:</label>
+      <br />
+      <!-- increase the number of rows and columns for the textarea -->
+      <textarea id="message" name="message" rows="2" cols="40"></textarea>
+      <br /><br />
+
+      <label for="gender">Gender:</label>
+      <!-- a dropdown list with three options male, female and other -->
+      <br /><br />
+
+      <label>Hobbies:</label><br />
+      <!-- three checkboxes for reading, traveling and gaming -->
+      <label for="hobby1">Reading</label><br />
+
+      <label for="hobby2">Traveling</label><br />
+
+      <label for="hobby3">Gaming</label><br /><br />
+
+      <label>Favorite Color:</label><br />
+      <!-- three radio buttons for red, blue and green -->
+      <input type="radio" id="color1" name="color" value="red" />
+      <label for="color1">Red</label><br />
+
+      <label for="color2">Blue</label><br />
+
+      <label for="color3">Green</label><br />
+
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

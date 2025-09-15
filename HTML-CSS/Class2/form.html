@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <!-- different http methods  -->
+    <form action="/submit" method="post">
+      <div>
+        <label for="username">Name:</label>
+        <!-- id - frontend ; uniquely identies the element in the DOM -->
+        <input type="text" id="username" name="name" required />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" /><br /><br />
+      </div>
+      <div>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="60" />
+      </div>
+      <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" />
+      </div>
+      <div>
+        <label for="phone">Mobile Phone</label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          pattern="[0-9]{10}"
+          minlength="10"
+          maxlength="10"
+        />
+      </div>
+      <div>
+        <p>Gender:</p>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="femlae">Female</label>
+        <input type="radio" id="other" name="gender" value="other" />
+        <label for="other">Other</label>
+        <!-- gender="male" -->
+      </div>
+      <div>
+        <p>Hobbies:</p>
+        <input type="checkbox" id="cricket" name="hobbies" value="cricket" />
+        <label for="cricket">Cricket</label>
+        <input type="checkbox" id="reading" name="hobbies" value="reading" />
+        <label for="femlae">Reading</label>
+      </div>
+      <div>
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="india">India</option>
+          <option value="uk">Uk</option>
+          <option value="australia">Australia</option>
+        </select>
+      </div>
+      <div>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" cols="40"></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+    <script src="./script.js"></script>
+  </body>
+</html>
