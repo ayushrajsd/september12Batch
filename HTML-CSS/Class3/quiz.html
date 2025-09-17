@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div p {
+        color: green;
+      }
+      div > p {
+        color: red;
+      }
+      article p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>another para</p>
+    <div>
+      <p>Direct child paragraph</p>
+      <section>
+        <p>Nested paragraph inside section</p>
+        <article>
+          <p>Deeply nested paragraph inside article</p>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>
