@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-size: 16px;
+        background-color: white;
+        margin: 20px;
+      }
+      /* Mobile: 600px or less */
+      @media only screen and (max-width: 600px) {
+        body {
+          font-size: 14px;
+          background-color: lightcoral;
+        }
+      }
+
+      /* Tablet: 601px to 900px*/
+      @media only screen and (min-width: 601px) and (max-width: 900px) {
+        body {
+          font-size: 16px;
+          background-color: lightblue;
+        }
+      }
+      /* small laptops: 901px to 1200px*/
+      @media only screen and (min-width: 901px) and (max-width: 1200px) {
+        body {
+          font-size: 18px;
+          background-color: lightgoldenrodyellow;
+        }
+      }
+      /* Deskto:  1201 px  */
+      @media only screen and (min-width: 1201px) {
+        body {
+          font-size: 20px;
+          background-color: lightgreen;
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Responsive Design Example</h1>
+    <p>
+      This is a simple example demonstrating responsiveness using media queries
+    </p>
+  </body>
+</html>
