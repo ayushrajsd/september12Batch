@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 2px solid grey;
+        height: 200px;
+        position: relative;
+        margin-top: 50px;
+      }
+      .box {
+        border: 2px solid red;
+        padding: 20px;
+      }
+      .absolute {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box absolute">I am absolute</div>
+      <div class="box">I am normal inside container</div>
+    </div>
+  </body>
+</html>
