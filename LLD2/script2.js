@@ -1,10 +1,10 @@
-// // function serveBeverage(drink, quantity) {
-// //   // function declaration
-// //   // parameters
-// //   console.log("I want " + quantity + " " + drink);
-// // }
+function serveBeverage(drink, quantity) {
+  // function declaration
+  // parameters
+  console.log("I want " + quantity + " " + drink);
+}
 
-// // serveBeverage("coffee", 4); // arguments
+serveBeverage("coffee", 4); // arguments
 
 // // // function expression
 // // let sayHi = function () {
@@ -22,28 +22,28 @@
 // //  * 4. assign them as properties of objects
 // //  */
 
-// // function greet(name) {
-// //   // Ritik
-// //   return "Hello " + name;
-// // }
+function greet(name) {
+  // Ritik
+  return "Hello " + name;
+}
 
-// // function log(input) {
-// //   console.log(`User activity done for ${input}`);
-// // }
+function log(input) {
+  console.log(`User activity done for ${input}`);
+}
 
 // // // greet("Nitin") // - Hello Nitin
 // // //
-// // function processUserInput(fn) {
-// //   // log
-// //   // greet
-// //   // greet
-// //   // parameter expected is function
-// //   let name = "Ritik";
-// //   console.log(fn(name)); // log(name)
-// // }
+function processUserInput(fn) {
+  // log
+  // greet
+  // greet
+  // parameter expected is function
+  let name = "Ritik";
+  console.log(fn(name)); // log(name)
+}
 
-// // processUserInput(greet); // function as argument
-// // processUserInput(log); // function as argument
+processUserInput(greet); // function as argument
+processUserInput(log); // function as argument
 
 // // console.log("a is ", a);
 // // var a = 10;
