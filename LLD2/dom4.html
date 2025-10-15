@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double Click Cards</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .card {
+        border: 1px solid;
+        height: 5rem;
+        width: 5rem;
+        margin: 1rem;
+      }
+      .green {
+        background-color: green;
+        box-shadow: 0px 0px 6px 5px greenyellow;
+      }
+
+      .red {
+        background-color: red;
+        box-shadow: 0px 0px 6px 5px lightcoral;
+      }
+      .blue {
+        background-color: blue;
+        box-shadow: 0px 0px 6px 5px lightcyan;
+      }
+    </style>
+  </head>
+  <!-- 1. select multiple elements
+    2. listen for events on them - double click
+    3. data attributes
+    4. manipulate css dynamically -->
+
+  <!-- <div id="myDiv" class="content visible">Hello World</div>
+    <script>
+      const div = document.getElementById("myDiv");
+
+      // add a new class as highlight
+      console.log(div.classList);
+      div.classList.remove("visible");
+      console.log(div.classList.contains("content")); -->
+  <body>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+  </body>
+
+  <script src="./dom4.js"></script>
+</html>

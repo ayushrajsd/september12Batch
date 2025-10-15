@@ -80,3 +80,5 @@ const max = numbers4.reduce(function (acc, curr) {
 }, numbers4[0]);
 
 console.log(max);
+
+const transaction3 = [1000, 30000, 4000, -898, 3800, -4500];
