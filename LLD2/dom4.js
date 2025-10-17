@@ -19,6 +19,9 @@ for (let i = 0; i < cardList.length; i++) {
     // set the attribute and mark it as used
     // e.target.setAttribute("data-color", "used");
   });
+  cardList[i].addEventListener("click", function (e) {
+    console.log("clicked ", e.detail);
+  });
 }
 
 /**
