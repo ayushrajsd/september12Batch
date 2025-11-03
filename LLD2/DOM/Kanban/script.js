@@ -5,6 +5,9 @@ const modalCont = document.querySelector(".modal-cont");
 // const textAreaCont = document.querySelector(".textArea-cont")
 const mainCont = document.querySelector(".main-cont");
 const textAreaCont = document.querySelector(".textArea-cont");
+const lockClose = "fa-lock";
+const lockOpen = "fa-lock-open";
+const colors = ["lightpink", "lightgreen", "lightblue", "black"]; // 4 % 4 -> 0
 
 // ----------------- STATE FLAGS ---------------------------
 let addTaskFlag = false; // tracks whether modal is open or closed
@@ -33,12 +36,82 @@ removeBtn.addEventListener("click", function () {
     removeBtn.style.color = "white";
   }
 });
+
+/****
+ * include lock icon in html
+ * whenthe icon is clicked -> change iucon to unlocked
+ * - make the text editable
+ * else
+ *  change icon to locked
+ *  - make the tast text non editable
+ *
+ */
 // function to remove tickets when delete mode is active
 function handleRemoval(ticket) {
   // newly created ticket -> add event listener to remove here
   ticket.addEventListener("click", function () {
     if (!removeTaskFlag) return;
     ticket.remove();
+  });
+}
+
+function handleLock(ticket) {
+  /**
+   *
+   * select the lock element
+   * figure out the child - i tag is with the class
+   * if the class is open lock -> make it locked and vice versa
+   */
+  const ticketLockElem = document.querySelector(".ticket-lock");
+  const ticketLockIcon = ticketLockElem.children[0]; // icon element
+  const ticketTaskArea = ticket.querySelector(".task-area");
+
+  ticketLockIcon.addEventListener("click", function () {
+    if (ticketLockIcon.classList.contains(lockClose)) {
+      ticketLockIcon.classList.remove(lockClose);
+      ticketLockIcon.classList.add(lockOpen);
+      // make the task area editable
+      ticketTaskArea.setAttribute("contenteditable", "true");
+    } else {
+      ticketLockIcon.classList.remove(lockOpen);
+      ticketLockIcon.classList.add(lockClose);
+      // make the taske area as non editable
+      ticketTaskArea.setAttribute("contenteditable", "false");
+    }
+  });
+}
+
+function handleColor(ticket) {
+  /***
+   * identify the color band that wqsa clicked
+   * find the color index in the array
+   * move to the next color index ( cyclically )
+   * update the background color
+   *
+   */
+  const ticketColorband = ticket.querySelector(".ticket-color");
+  ticketColorband.addEventListener("click", function () {
+    // step 1 -> find the current color
+    let currentColor = ticketColorband.style.backgroundColor;
+
+    // step 2 -> find the index of the color in the array
+    let currentColorIdx = colors.findIndex(function (color) {
+      return currentColor === color; // 3
+    });
+
+    // for(let i = 0; i < colors.length; i++){
+    //     if(colors[i] === currentColor) {
+    //         currentColorIdx = i;
+    //         break;
+
+    //     }
+    // }
+    // step 3 nove to the next color index
+    let newColorIdx = (currentColorIdx + 1) % colors.length;
+    let newColor = colors[newColorIdx];
+
+    // step 4: update the class
+    ticketColorband.style.backgroundColor = newColor;
   });
 }
 
@@ -52,6 +125,7 @@ function createTicket(ticketColor, ticketID, ticketTask) {
     <div class="ticket-color" style="background-color:${ticketColor}"></div>
     <div class="ticket-id">${ticketID}</div>
     <div class="task-area">${ticketTask}</div>
+    <div class="ticket-lock"><i class="fa-solid fa-lock"></i></div>
     `;
 
   // append the created ticket to the main container
@@ -59,6 +133,8 @@ function createTicket(ticketColor, ticketID, ticketTask) {
 
   // add delete funcitonlaity , we will call a handleRemove
   handleRemoval(ticketCont);
+  handleLock(ticketCont);
+  handleColor(ticketCont);
 }
 
 // adding event listener for the SHIFT key to create ticket
@@ -83,7 +159,6 @@ modalCont.addEventListener("keydown", function (e) {
 });
 
 const allPriorityColors = document.querySelectorAll(".priority-color");
-const colors = ["lightpink", "lightgreen", "lightblue", "black"];
 
 let modalPriorityColor = colors[colors.length - 1]; // default = black
 
@@ -102,3 +177,35 @@ allPriorityColors.forEach(function (colorElem) {
     console.log("selected color", modalPriorityColor);
   });
 });
+
+let toolBoxColors = document.getElementsByClassName("color");
+
+for (let i = 0; i < toolBoxColors.length; i++) {
+  toolBoxColors[i].addEventListener("click", function () {
+    let selectedColor = toolBoxColors[i].classList[0];
+
+    // select all the tickets
+    let allTickets = document.getElementsByClassName("ticket-cont");
+
+    // step 3 - loop throught each ticket
+    for (let j = 0; j < allTickets.length; j++) {
+      // find the ticket color band
+      let ticketColor =
+        allTickets[j].querySelector(".ticket-color").style.backgroundColor;
+
+      // step 4-> compare colors
+      if (ticketColor === selectedColor) {
+        allTickets[j].style.display = "block"; // show matching
+      } else {
+        allTickets[j].style.display = "none"; // hide
+      }
+    }
+  });
+  // step 5 : handle the double click
+  toolBoxColors[i].addEventListener("dblclick", function () {
+    let allTickets = document.getElementsByClassName("ticket-cont");
+    for (let k = 0; k < allTickets.length; k++) {
+      allTickets[k].style.display = "block"; // show matching
+    }
+  });
+}
