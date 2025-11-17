@@ -46,3 +46,55 @@ function fetchCatFact() {
 // Usage:
 fetchCatFact();
    */
+
+// Q1 Fetch and Display User Data (async/await & Error Handling)
+// Create a random user generator using the "https://randomuser.me/api/" API.
+// When a user clicks the "Get Random User" button, fetch user details and display them on the page, including:
+
+// Full Name
+// Email
+// Country
+// Handle API errors and provide appropriate feedback if the fetch fails.
+
+// HTML Starter code:
+
+// <!DOCTYPE html>
+// <html lang="en">
+//   <head>
+//     <title>Random User Generator</title>
+//     <style>
+//       #userCard {
+//         border: 1px solid #ccc;
+//         padding: 10px;
+//         width: 250px;
+//         text-align: center;
+//         display: none;
+//         margin-top: 10px;
+//       }
+//     </style>
+//   </head>
+//   <body>
+//     <button id="fetchUserBtn">Get Random User</button>
+//     <div id="userCard">
+//       <p id="userName"></p>
+//       <p id="userEmail"></p>
+//       <p id="userCountry"></p>
+//     </div>
+
+//     <script src="./script.js"></script>
+//   </body>
+// </html>
+
+// JS Starter Code:
+
+// Task
+// Create a random user generator using the "https://randomuser.me/api/" API.
+// When a user clicks the "Get Random User" button, fetch user details and display them on the page, including:
+//     Full Name
+//     Email
+//     Country
+// Handle API errors and provide appropriate feedback if the fetch fails.
+
+async function fetchRandomUser() {
+  // Write code here...
+}
