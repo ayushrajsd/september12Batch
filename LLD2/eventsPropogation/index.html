@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #grandparent {
+        padding: 30px;
+        border: 2px solid #333;
+        margin: 20px;
+      }
+      #parent {
+        padding: 30px;
+        border: 2px solid #666;
+        margin: 20px;
+      }
+      #child {
+        padding: 30px;
+        border: 2px solid #999;
+        margin: 20px;
+        background-color: #f0f0f0;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grandparent">
+      Grand Parent
+      <div id="parent">
+        Parent
+        <div id="child">Child</div>
+      </div>
+    </div>
+    <script src="./events.js"></script>
+  </body>
+</html>
