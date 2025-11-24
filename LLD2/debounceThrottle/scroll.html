@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,
+      html {
+        height: 3000px;
+        border: 1px solid black;
+      }
+      .status {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="status">
+      Scroll Position: <span id="scrollPosition">0</span>
+    </div>
+    <script>
+      function throttle(func, interval) {
+        let lastTime = 0;
+        return function () {
+          const now = Date.now();
+          if (now - lastTime >= interval) {
+            func();
+            lastTime = now;
+          }
+        };
+      }
+      const throttledScroll = throttle(handleScroll);
+      const handleScroll = () => {
+        document.getElementById("scrollPosition").textContent = window.scrollY;
+        console.log("scrolled");
+      };
+      window.addEventListener("scroll", throttledScroll);
+    </script>
+  </body>
+</html>
