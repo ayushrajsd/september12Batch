@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box" style="padding: 30px; background: lightgray">
+      Parent Box
+      <button id="btn">Click Button</button>
+    </div>
+    <script>
+      const box = document.getElementById("box");
+      box.addEventListener("click", function (event) {
+        console.log("you clicked inside the box");
+        console.log("event.target", event.target);
+        console.log("event.current target", event.currentTarget);
+        console.log("----------------------");
+      });
+    </script>
+  </body>
+</html>
