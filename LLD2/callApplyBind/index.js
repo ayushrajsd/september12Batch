@@ -9,7 +9,7 @@ const person1 = {
   },
 };
 
-// person1.printNameAndAge("Tamul Nadu", "cricket"); // mrthod invocation
+person1.printNameAndAge("Tamul Nadu", "cricket"); // mrthod invocation
 
 const person2 = {
   name: "Sanjay",
