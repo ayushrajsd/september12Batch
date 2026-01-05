@@ -4,21 +4,24 @@ import viteLogo from "/vite.svg";
 // import "./App.css";
 import MyComponent from "./components/MyComponent";
 import DisplayData from "./components/DisplayData";
+import Message from "./components/Message";
+import CustomButton from "./components/Button";
+import Counter from "./components/Count";
+import UserCard from "./components/UserCard";
+import user from "./Data/user";
+import ProductList from "./components/Product";
+import products from "./Data/product";
+import ToDoList from "./components/ToDo";
 
 function App() {
-  const fruits = ["Apple", "Bananna", "Cherry"];
-  const person = {
-    name: "React",
-    age: 19,
-  };
   return (
     <div>
-      {/* <MyComponent message="Hello, from component One" />
-      <MyComponent message="Hello, from component Two" />
-      <MyComponent message="Hello, from component three" />
-      <MyComponent message="Hello, from component four" />
-      <MyComponent message="Hello, from component five" /> */}
-      <DisplayData fruits={fruits} person={person} />
+      {/* <Message isLoggedIn={true} /> */}
+      {/* <CustomButton /> */}
+      {/* <Counter /> */}
+      {/* <UserCard user={user} /> */}
+      {/* <ProductList products={products} /> */}
+      <ToDoList />
     </div>
   );
 }
