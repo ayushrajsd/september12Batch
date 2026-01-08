@@ -7,3 +7,14 @@ const user = {
 };
 
 export default user;
+
+/**
+ * 
+ *  What does useState return?
+ * 
+ A. Only the current state value
+ B. Only a function to update state
+ C. An object with state properties
+ D. An array containing the state value and a setter function
+
+ */
